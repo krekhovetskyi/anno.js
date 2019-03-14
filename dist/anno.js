@@ -305,7 +305,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  Anno.prototype.showOverlay = function() {
 	    var $e;
-	    if ($('.anno-overlay').length === 0) {
+	    if (this.appendOverlayTo || $('.anno-overlay').length === 0) {
 	      $('body').append($e = this.overlayElem().addClass('anno-hidden'));
 	      return setTimeout((function() {
 	        return $e.removeClass('anno-hidden');
@@ -742,6 +742,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Licensed under the terms of the MIT license
 	 * http://www.opensource.org/licenses/mit-license.php
 	 */
+	var jQuery = __webpack_require__(1);
 
 	(function ($) {
 		var converter = {
