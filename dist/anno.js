@@ -305,8 +305,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  Anno.prototype.showOverlay = function() {
 	    var $e;
-	    if (this.appendOverlayTo || $('.anno-overlay').length === 0) {
-	      $('body').append($e = this.overlayElem().addClass('anno-hidden'));
+	    if ($('.anno-overlay').length === 0) {
+	      $(this.appendOverlayTo || 'body').append($e = this.overlayElem().addClass('anno-hidden'));
 	      return setTimeout((function() {
 	        return $e.removeClass('anno-hidden');
 	      }), 10);
