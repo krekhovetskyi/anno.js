@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("jQuery"));
+		module.exports = factory(require("jquery"));
 	else if(typeof define === 'function' && define.amd)
-		define(["jQuery"], factory);
+		define(["jquery"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("jQuery")) : factory(root["jQuery"]);
+		var a = typeof exports === 'object' ? factory(require("jquery")) : factory(root["jquery"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
 })(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
@@ -268,9 +268,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        console.warn(("Anno target '" + this.target + "' matched " + r.length + " ") + "elements. Targeting the first one.");
 	      }
 	      return r.first();
-	    } else if (this.target instanceof jQuery) {
+	    } else if (this.target instanceof jquery) {
 	      if (this.target.length > 1) {
-	        console.warn(("Anno jQuery target matched " + this.target.length + " ") + "elements. Targeting the first one.");
+	        console.warn(("Anno jquery target matched " + this.target.length + " ") + "elements. Targeting the first one.");
 	      }
 	      return this.target.first();
 	    } else if (this.target instanceof HTMLElement) {
@@ -278,7 +278,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    } else if (typeof this.target === 'function') {
 	      return this.target();
 	    } else {
-	      console.error("Unrecognised Anno.target. Please supply a jQuery " + "selector string, a jQuery object, a raw DOM element or a " + "function returning a jQuery element. target:");
+	      console.error("Unrecognised Anno.target. Please supply a jquery " + "selector string, a jquery object, a raw DOM element or a " + "function returning a jquery element. target:");
 	      return console.error(this.target);
 	    }
 	  };
@@ -733,16 +733,16 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
-	 * jQuery scrollintoview() plugin and :scrollable selector filter
+	 * jquery scrollintoview() plugin and :scrollable selector filter
 	 *
 	 * Version 1.8 (14 Jul 2011)
-	 * Requires jQuery 1.4 or newer
+	 * Requires jquery 1.4 or newer
 	 *
 	 * Copyright (c) 2011 Robert Koritnik
 	 * Licensed under the terms of the MIT license
 	 * http://www.opensource.org/licenses/mit-license.php
 	 */
-	var jQuery = __webpack_require__(1);
+	var jquery = __webpack_require__(1);
 
 	(function ($) {
 		var converter = {
@@ -809,11 +809,11 @@ return /******/ (function(modules) { // webpackBootstrap
 			scrollintoview: function (options) {
 				/// <summary>Scrolls the first element in the set into view by scrolling its closest scrollable parent.</summary>
 				/// <param name="options" type="Object">Additional options that can configure scrolling:
-				///        duration (default: "fast") - jQuery animation speed (can be a duration string or number of milliseconds)
+				///        duration (default: "fast") - jquery animation speed (can be a duration string or number of milliseconds)
 				///        direction (default: "both") - select possible scrollings ("vertical" or "y", "horizontal" or "x", "both")
 				///        complete (default: none) - a function to call when scrolling completes (called in context of the DOM element being scrolled)
 				/// </param>
-				/// <return type="jQuery">Returns the same jQuery set that this function was run on.</return>
+				/// <return type="jquery">Returns the same jquery set that this function was run on.</return>
 
 				options = $.extend({}, settings, options);
 				options.direction = converter[typeof (options.direction) === "string" && options.direction.toLowerCase()] || converter.both;
@@ -940,7 +940,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				return direction.y && size.scrollableY() || direction.x && size.scrollableX();
 			}
 		});
-	})(jQuery);
+	})(jquery);
 
 
 /***/ }
