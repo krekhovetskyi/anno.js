@@ -26,7 +26,9 @@
     "url": "https://github.com/iamdanfox/anno.js/issues"
   },
   "homepage": "https://github.com/iamdanfox/anno.js",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
   "devDependencies": {
     "coffee-loader": "^0.7.2",
     "coffee-script": "^1.8.0",
