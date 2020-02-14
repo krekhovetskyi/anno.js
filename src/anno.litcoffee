@@ -29,8 +29,8 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-    $ = require 'jquery'
-    require 'scrollintoview/jquery.scrollintoview.js'
+    $ = require 'cash-dom'
+    require 'jquery.scrollintoview'
 
     exports.Anno = class Anno
 
@@ -319,7 +319,7 @@ Semi-transparent overlay and other effects
 
       showOverlay: () ->
         if $('.anno-overlay').length is 0 # TODO mention pointer-events:none
-          $('body').append($e = @overlayElem().addClass 'anno-hidden')
+          $(@appendOverlayTo || 'body').append($e = @overlayElem().addClass 'anno-hidden')
           setTimeout (() -> $e.removeClass 'anno-hidden'), 10
         else
           $('.anno-overlay').replaceWith @overlayElem()
@@ -389,7 +389,7 @@ the fade in effect.
             "filling it white temporarily."
           origbg = $target.prop('style').background
           do (origbg) => @_undoEmphasise.push ($t) -> $t.css background:origbg
-          $target.css( background: 'white')
+          $target.css( backgroundColor: 'white')
 
         origzindex = $target.prop('style').zIndex
         do (origzindex) => @_undoEmphasise.push ($t) -> $t.css zIndex:origzindex

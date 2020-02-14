@@ -30,7 +30,7 @@
   font-family: sans-serif;
   font-weight: normal;
   font-size: 15px;
-  color: #56565a;
+  color: #56565A;
 }
 .anno .anno-inner .anno-btn-container {
   text-align: right;
@@ -40,7 +40,7 @@
   padding: 7px 14px;
   height: auto;
   width: auto;
-  background: #11a2dc;
+  background: #11A2DC;
   border: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -65,10 +65,10 @@
 }
 .anno .anno-inner .anno-btn-container .anno-btn.anno-btn-low-importance {
   background: none;
-  color: #bbbbbd;
+  color: #BBBBBD;
 }
 .anno .anno-inner .anno-btn-container .anno-btn.anno-btn-low-importance:hover {
-  color: #78787b;
+  color: #78787B;
 }
 .anno .anno-arrow {
   position: absolute;
@@ -166,5 +166,5 @@
   opacity: 0;
 }
 .anno-emphasise-target {
-  z-index: 1001 !important !important;
+  z-index: 1001 !important;
 }

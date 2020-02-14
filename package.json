@@ -1,9 +1,11 @@
 {
-  "name": "anno.js",
-  "version": "1.0.0",
+  "name": "@krekhovetskyi/anno.js",
+  "version": "2.0.0",
   "description": "Better step-by-step guides for powerful web apps.",
   "main": "dist/anno.js",
   "scripts": {
+    "compile:less": "lessc src/anno.less > dist/anno.css",
+    "compile:litcoffee": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,7 +29,8 @@
   },
   "homepage": "https://github.com/iamdanfox/anno.js",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "cash-dom": "6.0.1",
+    "jquery.scrollintoview": "^1.9.4"
   },
   "devDependencies": {
     "coffee-loader": "^0.7.2",
