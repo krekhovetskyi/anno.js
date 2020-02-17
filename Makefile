@@ -1,13 +1,23 @@
-all: anno.js anno.css
+WEBPACK = ./node_modules/.bin/webpack
+LESSC = ./node_modules/.bin/lessc
+COFFEELINT = ./node_modules/.bin/coffeelint
+DOCCO = ./node_modules/.bin/docco
 
-anno.js: src/anno.litcoffee
-	coffee -bl -o . src/anno.litcoffee
 
-anno.css: src/anno.less
-	lessc src/anno.less > anno.css
+
+all: dist/anno.js dist/anno.css
+
+dist/anno.js: src/anno.litcoffee
+	$(WEBPACK)
+
+dist/anno.css: src/anno.less
+	$(LESSC) src/anno.less > dist/anno.css
 
 docco: src/*.litcoffee
-	docco -o ./docco src/*.litcoffee
+	$(DOCCO) -o ./docco src/*.litcoffee
+
+lint: src/anno.litcoffee
+	$(COFFEELINT) src/anno.litcoffee
 
 clean:
-	rm -rf anno.js anno.css docco
+	rm -rf anno.* docco
