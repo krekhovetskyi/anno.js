@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("cash-dom"));
+		module.exports = factory(require("jquery"));
 	else if(typeof define === 'function' && define.amd)
-		define(["cash-dom"], factory);
+		define(["jquery"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("cash-dom")) : factory(root["cash-dom"]);
+		var a = typeof exports === 'object' ? factory(require("jquery")) : factory(root["jquery"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
 })(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
@@ -730,9 +730,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	/*!
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	 * jQuery scrollintoview() plugin and :scrollable selector filter
 	 *
 	 * Version 1.8 (14 Jul 2011)
@@ -742,8 +742,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Licensed under the terms of the MIT license
 	 * http://www.opensource.org/licenses/mit-license.php
 	 */
-
-	(function ($) {
+	!function(root, factory) {
+	    if (true) {
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    } else if (typeof exports === 'object') {
+	        factory(require('jquery'));
+	    } else {
+	        factory(root.jQuery);
+	    }
+	}
+	(this, function($) {
 	    var converter = {
 	        vertical: {x: false, y: true},
 	        horizontal: {x: true, y: false},
@@ -905,27 +913,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	                return false;
 	            }
 
-	            var size = {
-	                height: {
-	                    scroll: element.scrollHeight,
-	                    client: element.clientHeight
-	                },
-	                width: {
-	                    scroll: element.scrollWidth,
-	                    client: element.clientWidth
-	                },
-	                // check overflow.x/y because iPad (and possibly other tablets) don't dislay scrollbars
-	                scrollableX: function () {
-	                    return (overflow.x || overflow.isRoot) && this.width.scroll > this.width.client;
-	                },
-	                scrollableY: function () {
-	                    return (overflow.y || overflow.isRoot) && this.height.scroll > this.height.client;
-	                }
-	            };
-	            return direction.y && size.scrollableY() || direction.x && size.scrollableX();
-	        }
-	    });
-	})($);
+				var size = {
+					height: {
+						scroll: element.scrollHeight,
+						client: element.clientHeight
+					},
+					width: {
+						scroll: element.scrollWidth,
+						client: element.clientWidth
+					},
+					// check overflow.x/y because iPad (and possibly other tablets) don't dislay scrollbars
+					scrollableX: function () {
+						return (overflow.x || overflow.isRoot) && this.width.scroll > this.width.client;
+					},
+					scrollableY: function () {
+						return (overflow.y || overflow.isRoot) && this.height.scroll > this.height.client;
+					}
+				};
+				return direction.y && size.scrollableY() || direction.x && size.scrollableX();
+			}
+		});
+	});
 
 
 /***/ })

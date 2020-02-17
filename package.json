@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/iamdanfox/anno.js",
   "dependencies": {
-    "cash-dom": "6.0.1"
+    "jquery": "^3.4.1"
   },
   "devDependencies": {
     "coffee-loader": "^0.7.2",

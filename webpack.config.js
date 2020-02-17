@@ -7,7 +7,7 @@ module.exports = {
     libraryTarget: 'umd',
   },
   externals: {
-    'cash-dom': 'cash-dom',
+    'jquery': 'jquery',
   },
   resolve: {
     modulesDirectories: ["./node_modules", "./bower_components"],

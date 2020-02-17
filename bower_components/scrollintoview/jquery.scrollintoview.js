@@ -8,8 +8,16 @@
  * Licensed under the terms of the MIT license
  * http://www.opensource.org/licenses/mit-license.php
  */
-
-(function ($) {
+!function(root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        factory(require('jquery'));
+    } else {
+        factory(root.jQuery);
+    }
+}
+(this, function($) {
     var converter = {
         vertical: {x: false, y: true},
         horizontal: {x: true, y: false},
@@ -171,24 +179,24 @@
                 return false;
             }
 
-            var size = {
-                height: {
-                    scroll: element.scrollHeight,
-                    client: element.clientHeight
-                },
-                width: {
-                    scroll: element.scrollWidth,
-                    client: element.clientWidth
-                },
-                // check overflow.x/y because iPad (and possibly other tablets) don't dislay scrollbars
-                scrollableX: function () {
-                    return (overflow.x || overflow.isRoot) && this.width.scroll > this.width.client;
-                },
-                scrollableY: function () {
-                    return (overflow.y || overflow.isRoot) && this.height.scroll > this.height.client;
-                }
-            };
-            return direction.y && size.scrollableY() || direction.x && size.scrollableX();
-        }
-    });
-})($);
+			var size = {
+				height: {
+					scroll: element.scrollHeight,
+					client: element.clientHeight
+				},
+				width: {
+					scroll: element.scrollWidth,
+					client: element.clientWidth
+				},
+				// check overflow.x/y because iPad (and possibly other tablets) don't dislay scrollbars
+				scrollableX: function () {
+					return (overflow.x || overflow.isRoot) && this.width.scroll > this.width.client;
+				},
+				scrollableY: function () {
+					return (overflow.y || overflow.isRoot) && this.height.scroll > this.height.client;
+				}
+			};
+			return direction.y && size.scrollableY() || direction.x && size.scrollableX();
+		}
+	});
+});
